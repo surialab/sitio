@@ -11,6 +11,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+* {
+  margin: 0;
+}
 :root {
   scroll-behavior: smooth;
 }
@@ -46,7 +49,7 @@ h6 {
 # Sections & Section Header
 --------------------------------------------------------------*/
 section {
-  padding: 40px 0;
+  padding-bottom: 20px;
   overflow: hidden;
 }
 
@@ -127,28 +130,32 @@ section {
 # Header
 --------------------------------------------------------------*/
 .header {
-  height: 90px;
+  height: 100px;
   transition: all 0.5s;
   z-index: 997;
   background: #f2f2f2;
 }
 
 .header.sticked {
-  height: 70px;
+  height: 90px;
 }
 
 .header .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+  max-height: 90px;
+  margin: 10px;
 }
 
 .header .logo h1 {
   font-size: 30px;
   font-weight: 700;
-  color: var(--color-default);
+  color: var(--color-blue);
   font-family: var(--font-primary);
 }
-
+@media (max-width: 800px){
+  .header .logo h1 {
+    display: none;
+  }
+}
 .search-form-wrap {
   position: absolute;
   right: 0;
@@ -255,7 +262,7 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: var(--color-default);
+    color: var(--color-blue);
   }
 
   .navbar .getstarted,
@@ -359,11 +366,12 @@ section {
     inset: 55px 15px 15px 15px;
     padding: 10px 0;
     margin: 0;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: var(--color-white);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
+    text-align: center;
   }
 
   .navbar a,
@@ -378,6 +386,8 @@ section {
     color: var(--color-primary);
     white-space: nowrap;
     transition: 0.3s;
+    text-transform: uppercase;
+    
   }
 
   .navbar a i,
@@ -391,7 +401,8 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: var(--color-primary);
+    color: var(--color-secondary-light);
+    background-color: var(--color-secondary-dark);
   }
 
   .navbar .dropdown ul,
@@ -1307,4 +1318,15 @@ section {
 
 .footer .credits a {
   color: var(--color-white);
+}
+
+/* carrusel */
+
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: var(--bs-gutter-y);
 }
